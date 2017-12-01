@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "es5", // we compile to ES6
+        // "noImplicitAny": true,
+        "allowSyntheticDefaultImports": true,
+        // "typeRoots": [
+        //     "./typings",
+        //     "./node_modules/@types"
+        // ],
+        "strictNullChecks": true,
+        "module": "commonjs", // this is not really needed, es6 modules are the default for es6 target
+        "sourceMap": true, // create sourceMaps
+        "jsx": "react" // important for JSX support
+    },
+    "include": [
+        "src/**/*",
+        "test/**/*"
+    ]
+}
