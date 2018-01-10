@@ -1,8 +1,9 @@
 import * as React from 'react';
 
 import { Button } from 'antd';
-import 'antd/dist/antd.css';
-import { TopMenu } from '../../common/component/TopMenu'
+
+import {Tool} from '../../config/tool';
+
 interface page_props {
 	name : string
 }
@@ -13,17 +14,18 @@ export class Page extends React.Component<page_props, any>{
 		this.click=this.click.bind(this);
 	}
 	click(){
-		alert('alert');
+		Tool.alert('hello world!');
+		// alert('alert');
 	}
 	render() {
 		let menu_props={
 			type : 'yyx',
 			descp : true
 		}
+		let {name} = this.props;
 		return (
 			<div>
-				<TopMenu {...menu_props}/>
-				<Button type="primary" onClick={this.click}>{this.props.name}</Button>
+				<Button type="primary" onClick={this.click}>{name}</Button>
 			</div>
 		)
 	}
