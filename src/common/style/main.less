@@ -1,0 +1,33 @@
+@mainPage : #7dbcea;
+
+.my-demo {
+    height: 100%;
+    align-items: stretch;
+    .ant-layout-has-sider{
+        // min-height: 500px;
+    }
+    .ant-layout-header{
+        background: @mainPage;
+        font-size: 15px;
+        font-weight: 700;
+    }
+    .ant-layout-footer{
+        background: @mainPage;
+        // position: absolute;
+        // bottom: 0px;
+        // width: 100%;
+    }
+    .ant-layout-content{
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+        div{
+            font-size: 15px;
+            font-weight: 600;
+        }
+    }
+}
+#root{
+    // position: relative;
+    height: 100%;
+}

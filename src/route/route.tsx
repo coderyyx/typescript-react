@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Router, Route,IndexRoute, hashHistory } from 'react-router';
-import Home from '../page/TestUserInfo/home';
+// import Home from '../page/TestUserInfo/home';
+import Home from '../page/layout';
 
 let WelcomePage = ({title='Welcome To Typescript'})=>{
     return <div>{`Hello~ ${title}`}</div>
@@ -15,4 +16,3 @@ const routerConfig =  <Router history={hashHistory}>
 
 
 export default routerConfig;
-// const Greeter = ({name = 'world'}) => <div>Hello, {name}!</div>;

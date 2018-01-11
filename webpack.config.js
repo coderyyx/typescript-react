@@ -11,7 +11,7 @@ files.forEach(function(f) {
 });
 
 module.exports = {
-    entry: "./src/page/TestUserInfo/index.tsx",
+    entry: "./src/page/index.tsx",
     output: {
         // publicPath: '/build/',
         path:path.resolve(__dirname,"build"),
