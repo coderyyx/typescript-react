@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Menu, Icon ,Button} from 'antd';
 import {Tool} from '../../config/tool';
+import { ClickParam } from 'antd/lib/menu';
+import {Link} from 'react-router';
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
@@ -18,7 +20,7 @@ export default class App extends React.Component<{},state_shape> {
       }
       Tool.bind(this,['handleClick','toggleCollapsed']);
   }
-  handleClick(e) {
+  handleClick(e:ClickParam) {
     console.log('click ', e);
     this.setState({
       current: e.key,
@@ -45,10 +47,10 @@ export default class App extends React.Component<{},state_shape> {
             inlineCollapsed={collapsed}
           >
             <Menu.Item key="mail">
-              <Icon type="mail" />主页
+              <Link to="/"><Icon type="mail" />主页</Link>
             </Menu.Item>
             <Menu.Item key="app">
-              <Icon type="appstore" />个人中心
+              <Link to={"/register"}><Icon type="appstore" />个人中心</Link>
             </Menu.Item>
             <SubMenu title={<span><Icon type="setting" />设置</span>}>
               <MenuItemGroup title="Item 1">
