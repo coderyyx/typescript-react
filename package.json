@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --port 8123 --content-base ./build --devtool eval --progress --colors --inline --hot",
+    "hot": "webpack-dev-server --port 8123 --content-base ./build --devtool eval --progress --colors --inline --hot",
     "build": "webpack"
   },
   "author": "",
