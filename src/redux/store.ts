@@ -5,14 +5,10 @@ import {compose, createStore, combineReducers, applyMiddleware} from 'redux';
 import * as indexReducer from '../redux/reducres/reducer';
 import thunk from 'redux-thunk';
 import {Tool} from '../config/tool';
+import {storeState} from './storeTyping';
 
-type dataShape = object | Array<any>;
 
-interface storeState{
-    type:string;
-    path?:string;
-    data:dataShape
-}
+
  /**
   * combine application Reducers to a Big Reducer
     support many reducers mapping different reducer files
