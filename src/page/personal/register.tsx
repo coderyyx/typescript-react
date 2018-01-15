@@ -9,11 +9,11 @@ interface userInfo {
     name:string;
     password:string;
 }
-interface state_shape {
+interface stateShape {
     submitData:userInfo
 }
 
-class Register extends React.Component<any,any> {
+class Register extends React.Component<any,stateShape> {
     constructor(props, context) {
         super(props, context);
         this.state={
