@@ -1,8 +1,9 @@
-// import React, { Component } from 'react';
 import * as React from 'react';
+import { connect } from 'react-redux';
 import {Button,Row,Col,Input} from 'antd';
 import {Tool} from '../../config/tool';
 import { MouseEvent } from 'react';
+import * as indexActions from '../../redux/actions/index';
 
 interface userInfo {
     name:string;
@@ -24,7 +25,8 @@ class Register extends React.Component<any,any> {
         Tool.bind(this,['submit','handleInputValue']);
     }
     submit(){
-
+        let {data} = this.props.itemData;
+        this.props.addItem(data);
     }
     handleInputValue(e:React.ChangeEvent<HTMLInputElement>,type:string){
         let value:string=e.target.value;
@@ -39,14 +41,16 @@ class Register extends React.Component<any,any> {
         })
     }
     render() {
+        console.log(this);
         let {name,password} = this.state.submitData;
+        let {data} = this.props.itemData;
         return (
             <div>
                 <Row>
                     <Col span={4}>用户名：</Col>
                     <Col span={7}>
                         <Input type="text" 
-                                value={name}
+                                value={data}
                                 onChange={(e)=>this.handleInputValue(e,'name')}/>
                     </Col>
                 </Row>
@@ -68,4 +72,13 @@ class Register extends React.Component<any,any> {
     }
 }
 
-export default Register;
+// export default Register;
+let actions = Tool.redux.filterAction(['addItem'],indexActions);
+
+export default connect(state => { 
+    let {itemData} = state;
+
+    return {
+        itemData
+    }
+},actions)(Register)

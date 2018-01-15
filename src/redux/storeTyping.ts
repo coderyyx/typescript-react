@@ -1,4 +1,4 @@
-type dataShape = object | Array<any>;
+type dataShape = object | Array<any> | number | string;
 
 export interface storeState{
     type:string;

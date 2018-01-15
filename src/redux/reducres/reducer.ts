@@ -3,17 +3,23 @@ import {storeState} from '../storeTyping';
 
 interface itemActionShape{
     type:string;
-    item?:Array<unin>
+    data:number 
 }
 /**
  * 
  * @param state Object
  * @param action Object
  */
-export const reducerItem = (state = {} as any, action : itemActionShape = {} as any):storeState => {
+export const itemData = (state = {} as any, action : itemActionShape = {} as any):storeState => {
+    let {data,...rest} = action;
+    data = data? data :0;
+    let newAction = {
+        ...rest,
+        data:data + 1
+    }
     switch(action.type){
         case add:
-            return (<any>Object).assign({},state,action);
+            return (<any>Object).assign({},state,newAction);
         case decrease:
             return action;      
         default:

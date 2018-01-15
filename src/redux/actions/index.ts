@@ -1,7 +1,7 @@
 export const add = 'add';
 export const decrease = 'decrease';
 
-type unin= number | string;
+export type unin= number | string;
 
 interface addItems {
     type:string;
@@ -11,6 +11,6 @@ interface addItems {
 export const addItem = (item)=>{
     return {
         type:add,
-        item:item
+        data:item
     }
 }
